@@ -1,109 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KickDrillz — Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body { margin:0; font-family:'Poppins',sans-serif; background:#0c0f14; color:#f7f8fa; line-height:1.5; }
-    header { padding:20px; text-align:center; background:#121722; }
-    .logo { font-size:28px; font-weight:800; background:linear-gradient(135deg,#34d399,#60a5fa);
-      display:inline-block; padding:8px 16px; border-radius:12px; color:#081017; }
-    h1 { margin:20px 0; font-size:32px; }
-    p { max-width:640px; margin:0 auto 20px; color:#98a4b3; }
-    .cta { display:inline-block; margin:10px; padding:12px 20px; border-radius:10px;
-      background:linear-gradient(135deg,#34d399,#60a5fa); color:#081017; font-weight:700; text-decoration:none; }
-    .form { max-width:500px; margin:40px auto; background:#121722; padding:20px; border-radius:12px; }
-    label { display:block; margin:12px 0 6px; font-weight:600; }
-    input,select,textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #2a2f3a; background:#0b111a; color:#f7f8fa; }
-    button { margin-top:16px; }
-    .coach-extra { display:none; }
-    footer { text-align:center; padding:20px; font-size:13px; color:#98a4b3; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KickDrillz — Train Smarter. Play Faster.</title>
+  <meta name="description" content="AI-powered home training + real coaches for youth sports. Speed, strength, soccer, basketball, baseball, football, track & more." />
+  <meta property="og:title" content="KickDrillz — Train Smarter. Play Faster." />
+  <meta property="og:description" content="AI-powered home training + real coaches for youth sports." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/logo.png" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="/assets/logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',
+              500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>html{scroll-behavior:smooth}</style>
 </head>
-<body>
-  <header>
-    <div class="logo">KickDrillz</div>
+<body class="bg-slate-950 text-white antialiased">
+  <header class="sticky top-0 z-30 backdrop-blur bg-slate-950/70 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="request-info.html" class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="KickDrillz Logo" class="h-10"/>
+        <span class="sr-only">KickDrillz</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="request-info.html" class="hover:text-brand-300">How it works</a>
+        <a href="request-info.html" class="hover:text-brand-300">Sports</a>
+        <a href="request-info.html" class="hover:text-brand-300">For Coaches</a>
+        <a href="request-info.html" class="hover:text-brand-300">Shop</a>
+        <a href="request-info.html" class="hover:text-brand-300">Pricing</a>
+        <a href="request-info.html" class="px-3 py-1.5 rounded-full bg-brand-500/20 ring-1 ring-brand-400/30 hover:bg-brand-500/30">Request info</a>
+      </nav>
+    </div>
   </header>
 
-  <main style="text-align:center; padding:40px 20px;">
-    <h1>🚀 KickDrillz is Coming Soon</h1>
-    <p>Train smarter. Play harder. Join the waitlist today and get early access when we launch.</p>
-    <a href="#signup" class="cta">Join the Waitlist</a>
-    <a href="#signup" class="cta">Become a Coach</a>
-
-    <div id="signup" class="form">
-      <form name="kickdrillz-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-        <input type="hidden" name="form-name" value="kickdrillz-waitlist">
-        <p style="display:none;">
-          <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-        </p>
-
-        <label for="role">I am a…</label>
-        <select id="role" name="role" required>
-          <option value="">Select one…</option>
-          <option>Parent</option>
-          <option>Youth Athlete</option>
-          <option>Coach / Trainer</option>
-          <option>League / Team Admin</option>
-          <option>Other</option>
-        </select>
-
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" placeholder="First & Last" required>
-
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required>
-
-        <label for="sport">Primary Sport</label>
-        <select id="sport" name="sport">
-          <option value="">Select a sport…</option>
-          <option>Soccer</option>
-          <option>Basketball</option>
-          <option>Baseball</option>
-          <option>Football</option>
-          <option>Track & Field</option>
-          <option>Tennis</option>
-          <option>Golf</option>
-          <option>Other</option>
-        </select>
-
-        <div class="coach-extra" id="coach-extra">
-          <label for="exp">Coaching Experience</label>
-          <input id="exp" name="experience" type="text" placeholder="e.g. 5 years youth soccer">
-
-          <label for="certs">Certifications</label>
-          <input id="certs" name="certifications" type="text" placeholder="e.g. USSF D License">
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.2),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(14,116,144,.18),transparent_35%),radial-gradient(circle_at_50%_80%,rgba(8,145,178,.15),transparent_35%)]"></div>
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <img src="assets/logo.png" alt="KickDrillz Logo" class="h-16 mb-6" />
+          <h1 class="text-4xl md:text-6xl font-black leading-tight">Train smarter. <span class="text-brand-300">Play faster.</span></h1>
+          <p class="mt-5 text-slate-300 text-lg">AI-powered home training plus real coaches for youth sports. Personalized feedback, 20‑minute drillz, and a path to local teams and leagues.</p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="request-info.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 font-semibold">Request Info</a>
+            <a href="request-info.html" class="inline-flex items-center justify-center px-5 py-3 rounded-xl ring-1 ring-white/20 hover:ring-white/40">Join the waitlist</a>
+          </div>
+          <p class="mt-3 text-xs text-slate-400">iOS • Android • Web</p>
         </div>
-
-        <label for="message">What would you love KickDrillz to help with?</label>
-        <textarea id="message" name="message" placeholder="Tell us goals, age group, or features you want…"></textarea>
-
-        <label style="display:flex; align-items:center; gap:8px;">
-          <input type="checkbox" name="agree" required> I agree to receive email updates about early access and launch.
-        </label>
-
-        <button class="cta" type="submit">Join Waitlist</button>
-      </form>
+        <div class="relative">
+          <div class="aspect-[9/16] rounded-3xl ring-1 ring-white/20 overflow-hidden">
+            <img src="assets/hoodie-shorts.png" alt="KickDrillz Hoodie and Shorts" class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-slate-900/70 backdrop-blur border border-white/10 rounded-2xl p-4 max-w-[260px]">
+            <p class="text-sm">“Your sprint form looks great. Try a shorter ground contact time on steps 3–5.”</p>
+            <p class="mt-2 text-xs text-slate-400">— KickDrillz AI</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    © <span id="year"></span> KickDrillz. All rights reserved.
+  <section id="shop" class="max-w-6xl mx-auto px-4 py-16">
+    <div class="flex items-center justify-between gap-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Shop — Coming Soon</h2>
+      <span class="text-xs px-3 py-1 rounded-full bg-brand-500/20 ring-1 ring-brand-400/40">Early access</span>
+    </div>
+    <p class="mt-2 text-slate-300">Rep the brand. Limited first drop with a premium hoodie and performance shorts.</p>
+
+    <div class="mt-8 grid sm:grid-cols-2 gap-6">
+      <a href="request-info.html" class="rounded-2xl border border-white/10 bg-slate-900/40 overflow-hidden group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="assets/hoodie-shorts.png" alt="KickDrillz Hoodie" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"/>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-xl">KickDrillz Hoodie</h3>
+            <span class="text-xs px-2 py-1 rounded bg-slate-800 border border-white/10">Coming Soon</span>
+          </div>
+          <p class="mt-2 text-slate-300 text-sm">Ultra-soft fleece, oversized print, athletic fit.</p>
+        </div>
+      </a>
+
+      <a href="request-info.html" class="rounded-2xl border border-white/10 bg-slate-900/40 overflow-hidden group">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="assets/shorts.png" alt="KickDrillz Performance Shorts" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform"/>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold text-xl">Performance Shorts</h3>
+            <span class="text-xs px-2 py-1 rounded bg-slate-800 border border-white/10">Coming Soon</span>
+          </div>
+          <p class="mt-2 text-slate-300 text-sm">Moisture-wicking, 7&quot; inseam, logo mark on hem.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="product-meta" class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
+        <h3 class="font-semibold text-xl">Size Guide</h3>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full text-left text-sm">
+            <thead class="text-slate-300">
+              <tr>
+                <th class="py-2 pr-4">Size</th>
+                <th class="py-2 pr-4">Waist (in)</th>
+                <th class="py-2 pr-4">Inseam (in)</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-300/90">
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Youth S</td><td class="py-2 pr-4">22–24</td><td class="py-2 pr-4">6</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Youth M</td><td class="py-2 pr-4">24–26</td><td class="py-2 pr-4">6.5</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Youth L</td><td class="py-2 pr-4">26–28</td><td class="py-2 pr-4">7</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Youth XL</td><td class="py-2 pr-4">28–30</td><td class="py-2 pr-4">7.5</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Adult S</td><td class="py-2 pr-4">28–30</td><td class="py-2 pr-4">7</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Adult M</td><td class="py-2 pr-4">31–33</td><td class="py-2 pr-4">7</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Adult L</td><td class="py-2 pr-4">34–36</td><td class="py-2 pr-4">7.5</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Adult XL</td><td class="py-2 pr-4">37–39</td><td class="py-2 pr-4">8</td></tr>
+              <tr class="border-t border-white/10"><td class="py-2 pr-4">Adult 2XL</td><td class="py-2 pr-4">40–42</td><td class="py-2 pr-4">8</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-3 text-xs text-slate-400">*Preliminary sizing; final specs may vary slightly at production.</p>
+        </div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-slate-900/40 p-6">
+        <h3 class="font-semibold text-xl">Colors</h3>
+        <div class="mt-4 flex items-center gap-5">
+          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full ring-1 ring-white/20" style="background:#000"></span><span class="text-sm text-slate-300">Black</span></div>
+          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full ring-1 ring-white/20" style="background:#ffffff"></span><span class="text-sm text-slate-300">White</span></div>
+          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full ring-1 ring-white/20" style="background:#06b6d4"></span><span class="text-sm text-slate-300">Brand Blue</span></div>
+        </div>
+        <p class="mt-3 text-xs text-slate-400">Hoodie: Black/White. Shorts: Black with Brand Blue mark.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-400">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <p>© <span id="year"></span> KickDrillz, LLC</p>
+        <div class="flex items-center gap-4">
+          <a href="request-info.html" class="hover:text-white">Contact</a>
+          <a href="request-info.html" class="hover:text-white">Privacy</a>
+          <a href="request-info.html" class="hover:text-white">Terms</a>
+        </div>
+      </div>
+    </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const roleSelect = document.getElementById("role");
-    const coachExtra = document.getElementById("coach-extra");
-    roleSelect.addEventListener("change", () => {
-      if(roleSelect.value.includes("Coach")) {
-        coachExtra.style.display = "block";
-      } else {
-        coachExtra.style.display = "none";
-      }
-    });
-  </script>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

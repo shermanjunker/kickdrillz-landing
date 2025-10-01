@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Request Info — KickDrillz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-white antialiased min-h-screen">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <a href="index.html" class="inline-flex items-center gap-2 mb-6">
+      <img src="assets/logo.png" class="h-10" alt="KickDrillz logo">
+      <span class="text-xl font-semibold">KickDrillz</span>
+    </a>
+    <h1 class="text-3xl md:text-4xl font-bold">Request Information</h1>
+    <p class="mt-2 text-slate-300">Tell us a bit about your athlete or organization and we’ll get in touch.</p>
+
+    <form name="kd-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="mt-8 grid grid-cols-1 gap-4 bg-slate-900/40 border border-white/10 rounded-2xl p-6">
+      <input type="hidden" name="form-name" value="kd-request" />
+      <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <label class="text-sm">Parent/Guardian Name
+          <input required name="name" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10" />
+        </label>
+        <label class="text-sm">Email
+          <input required type="email" name="email" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10" />
+        </label>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <label class="text-sm">Phone
+          <input type="tel" name="phone" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10" />
+        </label>
+        <label class="text-sm">City & State
+          <input name="location" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10" />
+        </label>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <label class="text-sm">Athlete Age
+          <input type="number" name="age" min="3" max="18" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10" />
+        </label>
+        <label class="text-sm">Sports (select all that apply)
+          <select multiple name="sports" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10">
+            <option>Soccer</option><option>Basketball</option><option>Baseball</option><option>Football</option><option>Track & Field</option><option>Other</option>
+          </select>
+        </label>
+      </div>
+
+      <fieldset class="mt-2">
+        <legend class="text-sm mb-1">Interests</legend>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="interest" value="AI assessments">AI skill assessment</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="interest" value="In-person coaching">In‑person coaching</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="interest" value="League connect">Leagues/teams connection</label>
+        <label class="flex items-center gap-2 text-sm"><input type="checkbox" name="interest" value="Merch">Merch drop</label>
+      </fieldset>
+
+      <label class="text-sm">Anything else?
+        <textarea name="message" rows="5" class="mt-1 w-full px-3 py-2 rounded-lg bg-slate-950 border border-white/10"></textarea>
+      </label>
+
+      <div class="flex items-center gap-3">
+        <button class="px-5 py-3 rounded-xl bg-brand-500 hover:bg-brand-400 font-semibold">Submit</button>
+        <a href="index.html" class="text-slate-300 hover:text-white">Back</a>
+      </div>
+    </form>
+
+    <p class="mt-6 text-xs text-slate-400">This form uses <strong>Netlify Forms</strong>. Deploy the site on Netlify to receive submissions. You can add notifications or connect to Google Sheets/Zapier later.</p>
+  </div>
+</body>
+</html>
