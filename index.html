@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KickDrillz — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:'Poppins',sans-serif; background:#0c0f14; color:#f7f8fa; line-height:1.5; }
+    header { padding:20px; text-align:center; background:#121722; }
+    .logo { font-size:28px; font-weight:800; background:linear-gradient(135deg,#34d399,#60a5fa);
+      display:inline-block; padding:8px 16px; border-radius:12px; color:#081017; }
+    h1 { margin:20px 0; font-size:32px; }
+    p { max-width:640px; margin:0 auto 20px; color:#98a4b3; }
+    .cta { display:inline-block; margin:10px; padding:12px 20px; border-radius:10px;
+      background:linear-gradient(135deg,#34d399,#60a5fa); color:#081017; font-weight:700; text-decoration:none; }
+    .form { max-width:500px; margin:40px auto; background:#121722; padding:20px; border-radius:12px; }
+    label { display:block; margin:12px 0 6px; font-weight:600; }
+    input,select,textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #2a2f3a; background:#0b111a; color:#f7f8fa; }
+    button { margin-top:16px; }
+    .coach-extra { display:none; }
+    footer { text-align:center; padding:20px; font-size:13px; color:#98a4b3; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">KickDrillz</div>
+  </header>
+
+  <main style="text-align:center; padding:40px 20px;">
+    <h1>🚀 KickDrillz is Coming Soon</h1>
+    <p>Train smarter. Play harder. Join the waitlist today and get early access when we launch.</p>
+    <a href="#signup" class="cta">Join the Waitlist</a>
+    <a href="#signup" class="cta">Become a Coach</a>
+
+    <div id="signup" class="form">
+      <form name="kickdrillz-waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="kickdrillz-waitlist">
+        <p style="display:none;">
+          <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <label for="role">I am a…</label>
+        <select id="role" name="role" required>
+          <option value="">Select one…</option>
+          <option>Parent</option>
+          <option>Youth Athlete</option>
+          <option>Coach / Trainer</option>
+          <option>League / Team Admin</option>
+          <option>Other</option>
+        </select>
+
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="First & Last" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="sport">Primary Sport</label>
+        <select id="sport" name="sport">
+          <option value="">Select a sport…</option>
+          <option>Soccer</option>
+          <option>Basketball</option>
+          <option>Baseball</option>
+          <option>Football</option>
+          <option>Track & Field</option>
+          <option>Tennis</option>
+          <option>Golf</option>
+          <option>Other</option>
+        </select>
+
+        <div class="coach-extra" id="coach-extra">
+          <label for="exp">Coaching Experience</label>
+          <input id="exp" name="experience" type="text" placeholder="e.g. 5 years youth soccer">
+
+          <label for="certs">Certifications</label>
+          <input id="certs" name="certifications" type="text" placeholder="e.g. USSF D License">
+        </div>
+
+        <label for="message">What would you love KickDrillz to help with?</label>
+        <textarea id="message" name="message" placeholder="Tell us goals, age group, or features you want…"></textarea>
+
+        <label style="display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" name="agree" required> I agree to receive email updates about early access and launch.
+        </label>
+
+        <button class="cta" type="submit">Join Waitlist</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> KickDrillz. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const roleSelect = document.getElementById("role");
+    const coachExtra = document.getElementById("coach-extra");
+    roleSelect.addEventListener("change", () => {
+      if(roleSelect.value.includes("Coach")) {
+        coachExtra.style.display = "block";
+      } else {
+        coachExtra.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
